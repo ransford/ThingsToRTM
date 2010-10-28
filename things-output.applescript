@@ -9,9 +9,7 @@ tell application "Things"
 	end if
 	
 	(* Prompt for a filename and open the resulting file *)
-	set newFile to choose file name with prompt Â
-		"Output todos to file:" default name ("Things Todos - " & whichList & ".txt") Â
-		default location (path to desktop folder)
+	set newFile to choose file name with prompt "Output todos to file:" default name ("Things Todos - " & whichList & ".txt") default location (path to desktop folder)
 	try
 		set fh to (open for access newFile with write permission)
 	on error errmsg number errno
